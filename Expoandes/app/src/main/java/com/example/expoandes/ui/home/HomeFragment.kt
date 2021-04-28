@@ -31,9 +31,9 @@ class HomeFragment : Fragment() {
 
         boton_prueba.setOnClickListener(){
             println("hola")
-            db.collection("Mingle_users").document("prueba").update(
-                hashMapOf("qiiii" to "hola") as Map<String, Any>
-            ) 
+            db.collection("Mingle_users").document("prueba2").update(
+                hashMapOf("qiidsadasf" to "holaaa") as Map<String, Any>
+            )
         }
         return root
     }
