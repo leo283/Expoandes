@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.Expoandes" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#FFC107</item>
-        <item name="colorPrimaryVariant">#FFC107</item>
+        <item name="colorPrimary">#0399C8</item>
+        <item name="colorPrimaryVariant">#9AD2CE</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>

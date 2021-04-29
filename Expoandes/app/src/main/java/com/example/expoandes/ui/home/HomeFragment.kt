@@ -1,5 +1,6 @@
 package com.example.expoandes.ui.home
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.expoandes.R
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 class HomeFragment : Fragment() {
@@ -23,17 +25,29 @@ class HomeFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
+        val bundle = activity?.intent?.extras
+        val email= bundle?.getString("email")
+        val provider = bundle?.getString("provider")
         homeViewModel =
                 ViewModelProvider(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
 
         val boton_prueba=root.findViewById<Button>(R.id.boton_prueba)
 
-        boton_prueba.setOnClickListener(){
-            println("hola")
-            db.collection("Mingle_users").document("prueba2").update(
-                hashMapOf("qiidsadasf" to "holaaa") as Map<String, Any>
-            )
+
+        //Guardado de datos
+        val prefs =activity?.getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)?.edit()
+        prefs?.putString("email",email)
+        prefs?.putString("provider",provider)
+        prefs?.apply()
+
+
+        boton_prueba.setOnClickListener() {
+
+            FirebaseAuth.getInstance().signOut()
+            prefs?.clear()
+            prefs?.apply()
+            activity?.finish()
         }
         return root
     }

@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.auth.FirebaseAuth
+import java.util.*
 
 
 class   AuthActivity : AppCompatActivity() {
@@ -33,12 +34,20 @@ class   AuthActivity : AppCompatActivity() {
         val emailEditText = findViewById<EditText>(R.id.emailEditText)
         val passwordEditText = findViewById<EditText>(R.id.passwordEditText)
         signUpButton.setOnClickListener(){
-            if (emailEditText.text.isNotEmpty() && passwordEditText.text.isNotEmpty()){
+            if (!(emailEditText.text.toString().toLowerCase(Locale.ROOT).endsWith("uniandes.edu.co"))){
+                showAlert_correomal()
+            }
+
+            if(passwordEditText.text.isEmpty()){
+                showAlert_nocontraseña()
+            }
+            if (emailEditText.text.isNotEmpty() &&  emailEditText.text.toString().toLowerCase(Locale.ROOT).endsWith("uniandes.edu.co")&& passwordEditText.text.isNotEmpty()){
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(emailEditText.text.toString(),
-                    passwordEditText.text.toString()).addOnCompleteListener(){
-                        if (it.isSuccessful){
+                        passwordEditText.text.toString()).addOnCompleteListener(){
+                    if (it.isSuccessful){
                         showHome(it.result?.user?.email?:"",ProviderType.BASIC)
-                        }
+                    }
+
                     else {
                         showAlert()
                     }
@@ -49,7 +58,7 @@ class   AuthActivity : AppCompatActivity() {
         loginButton.setOnClickListener(){
             if (emailEditText.text.isNotEmpty() && passwordEditText.text.isNotEmpty()){
                 FirebaseAuth.getInstance().signInWithEmailAndPassword(emailEditText.text.toString(),
-                    passwordEditText.text.toString()).addOnCompleteListener(){
+                        passwordEditText.text.toString()).addOnCompleteListener(){
                     if (it.isSuccessful){
                         showHome(it.result?.user?.email?:"",ProviderType.BASIC)
                     }
@@ -71,6 +80,23 @@ class   AuthActivity : AppCompatActivity() {
         dialog.show()
 
     }
+    fun showAlert_correomal(){
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Error")
+        builder.setMessage("Su correo no es Uniandes, intente de nuevo")
+        builder.setPositiveButton("Aceptar",null)
+        val dialog:AlertDialog=builder.create()
+        dialog.show()
+    }
+    fun showAlert_nocontraseña(){
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Error")
+        builder.setMessage("Por favor escriba algo en el campo de contraseña")
+        builder.setPositiveButton("Aceptar",null)
+        val dialog:AlertDialog=builder.create()
+        dialog.show()
+    }
+
     fun showHome(email:String,provider:ProviderType){
         val homeIntent = Intent(this,MainActivity::class.java).apply{
             putExtra("email",email)
