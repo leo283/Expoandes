@@ -7,7 +7,7 @@
     tools:context=".ui.home.HomeFragment">
 
     <Button
-        android:id="@+id/boton_prueba"
+        android:id="@+id/logOutBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="159dp"

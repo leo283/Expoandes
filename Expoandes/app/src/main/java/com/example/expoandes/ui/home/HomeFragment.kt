@@ -32,7 +32,7 @@ class HomeFragment : Fragment() {
                 ViewModelProvider(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
 
-        val boton_prueba=root.findViewById<Button>(R.id.boton_prueba)
+
 
 
         //Guardado de datos
@@ -41,12 +41,18 @@ class HomeFragment : Fragment() {
         prefs?.putString("provider",provider)
         prefs?.apply()
 
+        //botones
 
-        boton_prueba.setOnClickListener() {
+        val logoutBtn = root.findViewById<Button>(R.id.logOutBtn)
+
+
+
+        logoutBtn.setOnClickListener() {
 
             FirebaseAuth.getInstance().signOut()
             prefs?.clear()
             prefs?.apply()
+
             activity?.finish()
         }
         return root
