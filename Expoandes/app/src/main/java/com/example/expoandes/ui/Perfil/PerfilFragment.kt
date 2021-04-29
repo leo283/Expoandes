@@ -1,4 +1,4 @@
-package com.example.expoandes.ui.dashboard
+package com.example.expoandes.ui.Perfil
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.expoandes.R
 
-class DashboardFragment : Fragment() {
+class PerfilFragment : Fragment() {
 
-    private lateinit var dashboardViewModel: DashboardViewModel
+    private lateinit var perfilViewModel: PerfilViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        dashboardViewModel =
-                ViewModelProvider(this).get(DashboardViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
+        perfilViewModel =
+                ViewModelProvider(this).get(PerfilViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_perfil, container, false)
         val textView: TextView = root.findViewById(R.id.text_dashboard)
-        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
+        perfilViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root
