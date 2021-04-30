@@ -1,6 +1,7 @@
 package com.example.expoandes.ui.Perfil
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.expoandes.AddActivity
 import com.example.expoandes.R
 import com.google.firebase.auth.FirebaseAuth
 
@@ -38,12 +40,17 @@ class PerfilFragment : Fragment() {
                 ViewModelProvider(this).get(PerfilViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_perfil, container, false)
 
-
+        val addBtn = root.findViewById<Button>(R.id.addBtn)
         val logoutBtn = root.findViewById<Button>(R.id.logOutBtn)
         val correo = root.findViewById<TextView>(R.id.correo)
 
 
         correo.text="  "+email.toString()+"  "
+
+        addBtn.setOnClickListener(){
+            val cambio_pantalla = Intent(activity,AddActivity::class.java)
+            startActivity(cambio_pantalla)
+        }
 
         logoutBtn.setOnClickListener() {
 
@@ -53,6 +60,8 @@ class PerfilFragment : Fragment() {
 
             activity?.finish()
         }
+
+
         return root
     }
 }

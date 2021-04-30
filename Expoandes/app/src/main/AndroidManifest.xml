@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/icono_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Expoandes.NoActionBar">
+        <activity android:name=".AddActivity"/>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" />

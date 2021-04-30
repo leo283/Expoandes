@@ -6,21 +6,54 @@
     android:layout_height="match_parent"
     tools:context=".ui.Perfil.PerfilFragment">
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:background="#2196F3"
-        android:layout_marginTop="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/logOutBtn"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout">
+
+        <Button
+            android:id="@+id/addBtn"
+            android:layout_width="151dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="30dp"
+            android:backgroundTint="#FFFFFF"
+            android:drawableLeft="@mipmap/aniadir_simbolo"
+            android:text="Agregar un objeto"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
+        <Space
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp" />
+
+        <Button
+            android:id="@+id/logOutBtn"
+            android:layout_width="133dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/rounded_button"
+            android:text="Cerrar sesión"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:background="#2196F3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="80dp"
             android:src="@mipmap/profile" />
@@ -30,26 +63,34 @@
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="100dp"
             android:background="@drawable/not_so_rounded_button"
             android:text="Esto es un texto"
             android:textColor="#FFFFFF"
             android:textSize="20dp" />
+
+
     </FrameLayout>
 
-    <Button
-        android:id="@+id/logOutBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="159dp"
-        android:layout_marginEnd="159dp"
-        android:background="@drawable/rounded_button"
-        android:text="Cerrar sesión"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginBottom="4dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.774" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="MIS OBJETOS"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
