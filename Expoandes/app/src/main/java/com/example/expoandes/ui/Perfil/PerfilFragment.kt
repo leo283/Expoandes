@@ -2,17 +2,23 @@ package com.example.expoandes.ui.Perfil
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.expoandes.AddActivity
+import com.example.expoandes.MainActivity
 import com.example.expoandes.R
+import com.google.android.material.bottomnavigation.BottomNavigationMenu
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 
 class PerfilFragment : Fragment() {
@@ -35,6 +41,11 @@ class PerfilFragment : Fragment() {
         prefs?.apply()
 
 
+
+        val barra=activity?.findViewById<BottomNavigationView>(R.id.nav_view)
+        //Después del 0xFF es cuando se pone el color en hexadecimal
+        val color=0xFF9AD2CE.toInt()
+        barra?.itemBackground=ColorDrawable(color)
 
         perfilViewModel =
                 ViewModelProvider(this).get(PerfilViewModel::class.java)

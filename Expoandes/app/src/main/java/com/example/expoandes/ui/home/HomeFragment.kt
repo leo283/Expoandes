@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
@@ -20,6 +21,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.expoandes.MainActivity
 import com.example.expoandes.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
@@ -36,6 +38,11 @@ class HomeFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
+
+        val barra=activity?.findViewById<BottomNavigationView>(R.id.nav_view)
+        //Después del 0xFF es cuando se pone el color en hexadecimal
+        val color=0xFFB59F96.toInt()
+        barra?.itemBackground= ColorDrawable(color)
         val bundle = activity?.intent?.extras
         val email = bundle?.getString("email")
         val provider = bundle?.getString("provider")

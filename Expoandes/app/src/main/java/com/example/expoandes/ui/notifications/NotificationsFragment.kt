@@ -1,5 +1,6 @@
 package com.example.expoandes.ui.notifications
 
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.expoandes.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class NotificationsFragment : Fragment() {
 
@@ -26,6 +28,11 @@ class NotificationsFragment : Fragment() {
         notificationsViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
+
+        val barra=activity?.findViewById<BottomNavigationView>(R.id.nav_view)
+        //Después del 0xFF es cuando se pone el color en hexadecimal
+        val color=0xFFBC5A2B.toInt()
+        barra?.itemBackground= ColorDrawable(color)
         return root
     }
 }
