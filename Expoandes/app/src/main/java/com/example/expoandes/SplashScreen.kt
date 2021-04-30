@@ -10,8 +10,8 @@ import com.airbnb.lottie.LottieAnimationView
 class SplashScreen : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        getSupportActionBar()?.hide()
-        setTheme(R.style.Theme_Expoandes)
+        //getSupportActionBar()?.hide()
+        setTheme(R.style.Theme_Expoandes_NoActionBar)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
         splashh()

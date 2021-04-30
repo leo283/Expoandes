@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Mingle</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home">Inicio</string>
+    <string name="title_dashboard">Perfil</string>
+    <string name="title_notifications">Notificationes</string>
 
     <string name="prefs_file">com.example.expoandes.PREFERENCE_FILE_KEY</string>
 </resources>
