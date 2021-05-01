@@ -31,7 +31,7 @@ class NotificationsFragment : Fragment() {
 
         val barra=activity?.findViewById<BottomNavigationView>(R.id.nav_view)
         //Después del 0xFF es cuando se pone el color en hexadecimal
-        val color=0xFFBC5A2B.toInt()
+        val color=0xFFF4A55F.toInt()
         barra?.itemBackground= ColorDrawable(color)
         return root
     }
