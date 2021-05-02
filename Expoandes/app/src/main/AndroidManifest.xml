@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/icono_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Expoandes.NoActionBar">
+        <activity android:name=".PrestamosView"/>
+        <activity android:name=".CosasPropiasView"/>
         <activity android:name=".AddActivity"/>
         <activity
             android:name=".MainActivity"

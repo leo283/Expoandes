@@ -35,7 +35,7 @@ class HomeFragment : Fragment() {
 
         val barra=activity?.findViewById<BottomNavigationView>(R.id.nav_view)
         //Después del 0xFF es cuando se pone el color en hexadecimal
-        val color=0xFFB59F96.toInt()
+        val color=0xFF97BDDE.toInt()
         barra?.itemBackground= ColorDrawable(color)
         val bundle = activity?.intent?.extras
         val email = bundle?.getString("email")
@@ -72,9 +72,9 @@ class HomeFragment : Fragment() {
                 if (datos != null) {
                     val layout = root.findViewById<LinearLayout>(R.id.layout)
                     layout.removeAllViews()
-                    for (i in datos-1) {
+                    for (i in datos) {
 
-                        println(context)
+
 
                         val nuevo_i=i.toString()
                         val lista=nuevo_i.split("=")
