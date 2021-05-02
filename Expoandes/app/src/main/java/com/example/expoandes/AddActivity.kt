@@ -63,7 +63,7 @@ class   AddActivity : AppCompatActivity() {
                 }
             }
 
-                    data_general.set(
+                    data_general.update(
                             hashMapOf(texto_nombre_cosa.toString() to email) as Map<String,Any>
                     )
 
