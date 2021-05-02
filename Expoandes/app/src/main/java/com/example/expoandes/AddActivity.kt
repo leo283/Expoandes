@@ -63,27 +63,12 @@ class   AddActivity : AppCompatActivity() {
                 }
             }
 
-            data_general.addSnapshotListener{snapshot,e->
-                if (e != null) {
-                    Log.w(ContentValues.TAG, "Listen failed.", e)
-                    return@addSnapshotListener
-                }
-
-                if (snapshot != null && snapshot.exists()) {
-                    data_general.update(
-                            hashMapOf(
-                                    texto_nombre_cosa.toString() to email
-                            ) as Map<String, Any>
-                    )
-
-                }
-                else {
                     data_general.set(
                             hashMapOf(texto_nombre_cosa.toString() to email) as Map<String,Any>
                     )
 
-                }
-            }
+
+
 
             onBackPressed()
         }
