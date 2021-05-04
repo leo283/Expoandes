@@ -9,13 +9,14 @@ import android.widget.LinearLayout
 import android.widget.Space
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.isEmpty
 import com.google.firebase.firestore.FirebaseFirestore
 
 class PrestamosView : AppCompatActivity(){
     private val db=FirebaseFirestore.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
-
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_prestamos_view)

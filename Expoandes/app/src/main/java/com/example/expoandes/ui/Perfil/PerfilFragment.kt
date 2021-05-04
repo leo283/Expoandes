@@ -18,6 +18,7 @@ import android.widget.Space
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
+import androidx.core.view.marginEnd
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -26,6 +27,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationMenu
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.getField
+import org.w3c.dom.Text
 import java.util.*
 
 class PerfilFragment : Fragment() {
@@ -84,6 +87,10 @@ class PerfilFragment : Fragment() {
         val data_cosas_propias=db.collection("Mingle_users").document(email.toString()).collection("mis_prestamos").document("cosas")
         val layout_cosas_propias=root.findViewById<LinearLayout>(R.id.mis_cosas)
         val layout_prestamos=root.findViewById<LinearLayout>(R.id.prestamos)
+
+        val hola = db.collection("Mingle_users").document(email.toString()).collection("mis_prestamos").get()
+
+
         data_prestamos.addSnapshotListener{snapshot, e ->
             if (e != null) {
                 Log.w(ContentValues.TAG, "Listen failed.", e)
@@ -93,20 +100,19 @@ class PerfilFragment : Fragment() {
                 Log.d(ContentValues.TAG, "Current data: ${snapshot.data}")
                 val datos=snapshot.data
                 if (datos!=null) {
-                    var a=1
+                    var a=0
                     layout_prestamos.removeAllViews()
                     for (cosa in datos) {
-                        if (a<=5) {
+                        if (a<=4) {
                             if (activity!=null) {
                                 val texto_add = TextView(activity?.application)
                                 texto_add.textSize = 16f
-                                texto_add.text = cosa.key.toString().capitalize(Locale.ROOT)
+                                texto_add.text = cosa.key.toString()
                                 texto_add.gravity = Gravity.CENTER_HORIZONTAL
-                                val color=(0xFF000000).toInt()
-                                texto_add.setTextColor(color)
+                                val colour=(0xFF000000).toInt()
+                                texto_add.setTextColor(colour)
                                 val espacio= Space(activity?.application)
-                                espacio.minimumHeight=10
-
+                                espacio.minimumHeight=20
 
 
                                 layout_prestamos.addView(espacio)
@@ -121,42 +127,32 @@ class PerfilFragment : Fragment() {
             }
 
         }
-        data_cosas_propias.addSnapshotListener{snapshot, e ->
-            if (e != null) {
-                Log.w(ContentValues.TAG, "Listen failed.", e)
-                return@addSnapshotListener
-            }
-            if (snapshot != null && snapshot.exists()) {
-                Log.d(ContentValues.TAG, "Current data: ${snapshot.data}")
-                val datos=snapshot.data
-                if (datos!=null) {
 
-                    layout_cosas_propias.removeAllViews()
-                    var a=1
-                    for (cosa in datos) {
 
-                        if (a<=5) {
-                            if (activity!=null) {
-                                val texto_add = TextView(activity?.application)
-                                val espacio= Space(activity?.application)
-                                espacio.minimumHeight=10
-                                texto_add.textSize = 15f
-                                texto_add.text = cosa.key.toString()
-                                texto_add.gravity = Gravity.CENTER_HORIZONTAL
-                                val color=(0xFF000000).toInt()
-                                texto_add.setTextColor(color)
-
-                                layout_cosas_propias.addView(espacio)
-                                layout_cosas_propias.addView(texto_add)
-                                println(cosa.key)
-                                a++
-                            }
-                        }
-                    }
+        hola.addOnSuccessListener { resultado->
+            if (resultado!=null){
+                var a=0
+                layout_cosas_propias.removeAllViews()
+                for (documento in resultado){
+                    val data=documento.data
+                    val estado=data["estado"].toString()
+                    val nombre= data["nombre"].toString()
+                    val texto_nombre = TextView(activity)
+                    val espacio = Space(activity)
+                    espacio.minimumHeight=20
+                    texto_nombre.text=nombre
+                    texto_nombre.textSize=16f
+                    texto_nombre.gravity=Gravity.CENTER
+                    var colorr=(0xFF000000).toInt()
+                    if (estado=="disponible"){colorr=(0xFF51E05D).toInt()}else if(estado=="no disponible"){colorr=(0xFFE13737).toInt()}
+                    texto_nombre.setTextColor(colorr)
+                    if (a<=4){
+                    layout_cosas_propias.addView(espacio)
+                    layout_cosas_propias.addView(texto_nombre)
+                    a++}
+                    println(nombre)
                 }
-
             }
-
         }
 
 

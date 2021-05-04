@@ -3,6 +3,7 @@ package com.example.expoandes.ui.home
 import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
+import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
@@ -11,9 +12,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isEmpty
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.expoandes.InfoConfirmar
 import com.example.expoandes.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.firestore.FieldValue
@@ -112,38 +115,13 @@ class HomeFragment : Fragment() {
 
 
                         cosa.setOnClickListener(){
-                            val data_owner=db.collection("Mingle_users").document(email_owner).collection("mis_prestamos").document("cosas")
-
-                            data_profile.addSnapshotListener{snapshot,e->
-                                if (e != null) {
-                                    Log.w(ContentValues.TAG, "Listen failed.", e)
-                                    return@addSnapshotListener
-                                }
-
-                                if (snapshot != null && snapshot.exists()) {
-                                    data_profile.update(
-                                            hashMapOf(
-                                                    variable to ""
-                                            ) as Map<String, Any>
-                                    )
-
-                                }
-                                else {
-                                    data_profile.set(
-                                            hashMapOf(variable to "") as Map<String,Any>
-                                    )
-
-                                }
+                            val ir_a_info = Intent(activity,InfoConfirmar::class.java).apply{
+                                putExtra("elemento",cosa.text)
+                                putExtra("correo",lista[1].toString())
                             }
-                            println(variable)
+                            startActivity(ir_a_info)
 
 
-                            val updates = hashMapOf<String, Any>(
-                                    variable to FieldValue.delete()
-                            )
-
-                            doc_data.update(updates)
-                            data_owner.update(updates)
                            // db.collection("Mingle_users").document()
                         }}}
                         //println(i)
@@ -160,4 +138,6 @@ class HomeFragment : Fragment() {
 
             return root
         }
+
+
 }
