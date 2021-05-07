@@ -35,6 +35,7 @@ class CosasPropiasView : AppCompatActivity()  {
                 layout_objetos.removeAllViews()
                 for (documento in resultado){
                     val data=documento.data
+                    val estado=data["estado"].toString()
                     val nombre= data["nombre"].toString()
                     val texto_nombre = TextView(this)
                     val espacio = Space(this)
@@ -42,7 +43,9 @@ class CosasPropiasView : AppCompatActivity()  {
                     texto_nombre.text=nombre
                     texto_nombre.textSize=16f
                     texto_nombre.gravity=Gravity.CENTER
-                    val colorr=(0xFF000000).toInt()
+                    var colorr=(0xFF000000).toInt()
+                    if (estado=="disponible"){colorr=(0xFF51E05D).toInt()}else if(estado=="no disponible"){colorr=(0xFFE13737).toInt()}
+                    texto_nombre.setTextColor(colorr)
                     texto_nombre.setTextColor(colorr)
 
                     layout_objetos.addView(espacio)

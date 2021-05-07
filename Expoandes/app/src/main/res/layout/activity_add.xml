@@ -65,7 +65,7 @@
         android:layout_marginTop="72dp"
         android:ems="10"
         android:hint="Escribe aquí"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,17 +82,60 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/texto3" />
+        app:layout_constraintTop_toBottomOf="@+id/texto3"
+        />
 
     <Button
         android:id="@+id/agregarBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="148dp"
         android:background="@drawable/not_so_rounded_button"
         android:text="Agregar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/articulo_descripcion" />
+
+    <RadioGroup
+        android:id="@+id/btn_group"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="37dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/articulo_descripcion">
+
+        <RadioButton
+            android:id="@+id/libro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Libros" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/electronico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Electrónicos" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/material_escolar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Material escolar" />
+    </RadioGroup>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
