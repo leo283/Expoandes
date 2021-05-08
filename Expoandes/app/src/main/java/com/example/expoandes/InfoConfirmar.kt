@@ -28,11 +28,11 @@ class InfoConfirmar:AppCompatActivity() {
         val bundle=this.intent?.extras
         val elemento=bundle?.get("elemento").toString()
         val correo_duenio=bundle?.get("correo").toString()
-        val texto=findViewById<TextView>(R.id.texto_nombre)
-        val text_owner=findViewById<TextView>(R.id.text_owner)
-        val precioTxt=findViewById<TextView>(R.id.txtPrecio)
-        val descripcionTxt=findViewById<TextView>(R.id.txtDescripcion)
-        val boton_prestar=findViewById<Button>(R.id.PrestarBtn)
+        val texto=findViewById<TextView>(R.id.texto_nombre_dev)
+        val text_owner=findViewById<TextView>(R.id.text_owner_dev)
+        val precioTxt=findViewById<TextView>(R.id.txtPrecio_dev)
+        val descripcionTxt=findViewById<TextView>(R.id.txtDescripcion_dev)
+        val boton_prestar=findViewById<Button>(R.id.DevolverBtn_dev)
         val elemento_firebase=db.collection("Mingle_users").document(correo_duenio).collection("mis_prestamos").document(elemento)
         val data_profile = db.collection("Mingle_users").document(email.toString()).collection("prestamos_actuales").document("cosas")
         val doc_data = db.collection("Cosas_disponibles").document("cosas")
@@ -81,7 +81,7 @@ class InfoConfirmar:AppCompatActivity() {
                                 if (snapshot != null && !snapshot.exists()) {
                                     data_profile.set(
                                             hashMapOf(
-                                                    elemento to ""
+                                                    elemento to correo_duenio
                                             ) as Map<String, Any>
                                     )
 
@@ -91,7 +91,7 @@ class InfoConfirmar:AppCompatActivity() {
                             }
 
                             data_profile.update(
-                                    hashMapOf(elemento to "") as Map<String,Any>
+                                    hashMapOf(elemento to correo_duenio) as Map<String,Any>
                             )
 
                             println(elemento)

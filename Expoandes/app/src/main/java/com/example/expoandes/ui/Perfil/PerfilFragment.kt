@@ -55,7 +55,7 @@ class PerfilFragment : Fragment() {
 
         val barra=activity?.findViewById<BottomNavigationView>(R.id.nav_view)
         //Después del 0xFF es cuando se pone el color en hexadecimal
-        val color=0xFF9AD2CE.toInt()
+        val color=0xFFA8BBC8.toInt()
         barra?.itemBackground=ColorDrawable(color)
 
         perfilViewModel =
@@ -129,32 +129,38 @@ class PerfilFragment : Fragment() {
         }
 
 
-        hola.addOnSuccessListener { resultado->
-            if (resultado!=null){
-                var a=0
+        hola.addOnSuccessListener { resultado ->
+            if (resultado != null) {
+                var a = 0
                 layout_cosas_propias.removeAllViews()
-                for (documento in resultado){
-                    val data=documento.data
-                    val estado=data["estado"].toString()
-                    val nombre= data["nombre"].toString()
-                    val texto_nombre = TextView(activity)
-                    val espacio = Space(activity)
-                    espacio.minimumHeight=20
-                    texto_nombre.text=nombre
-                    texto_nombre.textSize=16f
-                    texto_nombre.gravity=Gravity.CENTER
-                    var colorr=(0xFF000000).toInt()
-                    if (estado=="disponible"){colorr=(0xFF51E05D).toInt()}else if(estado=="no disponible"){colorr=(0xFFE13737).toInt()}
-                    texto_nombre.setTextColor(colorr)
-                    if (a<=4){
-                    layout_cosas_propias.addView(espacio)
-                    layout_cosas_propias.addView(texto_nombre)
-                    a++}
-                    println(nombre)
+                for (documento in resultado) {
+                    val data = documento.data
+                    val estado = data["estado"].toString()
+                    val nombre = data["nombre"].toString()
+                    if (activity != null) {
+                        val texto_nombre = TextView(activity)
+                        val espacio = Space(activity)
+                        espacio.minimumHeight = 20
+                        texto_nombre.text = nombre
+                        texto_nombre.textSize = 16f
+                        texto_nombre.gravity = Gravity.CENTER
+                        var colorr = (0xFF000000).toInt()
+                        if (estado == "disponible") {
+                            colorr = (0xFF418337).toInt()
+                        } else if (estado == "no disponible") {
+                            colorr = (0xFFdf1623).toInt()
+                        }
+                        texto_nombre.setTextColor(colorr)
+                        if (a <= 4) {
+                            layout_cosas_propias.addView(espacio)
+                            layout_cosas_propias.addView(texto_nombre)
+                            a++
+                        }
+                        println(nombre)
+                    }
                 }
             }
         }
-
 
 
         layout_cosas_propias.setOnClickListener(){

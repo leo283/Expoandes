@@ -2,6 +2,7 @@ package com.example.expoandes
 
 import android.content.ContentValues
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
@@ -44,8 +45,9 @@ class PrestamosView : AppCompatActivity(){
                     layout_objetos.removeAllViews()
                     for (i in datos) {
 
-
+                        val correo_duenio=i.value
                         val texto=i.key
+
 
 
                         val cosa = TextView(this.application)
@@ -67,6 +69,14 @@ class PrestamosView : AppCompatActivity(){
                             layout_objetos.addView(espacio)
                         }
                         layout_objetos.addView(cosa)
+
+                        cosa.setOnClickListener(){
+                           val view_info_devolver = Intent(this,DevolverActivity::class.java).apply{
+                               putExtra("email",correo_duenio.toString())
+                               putExtra("elemento",texto.toString())
+                           }
+                           startActivity(view_info_devolver)
+                        }
                     }
                 }
             }

@@ -11,6 +11,8 @@
         android:id="@+id/botones"
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/layout_objetos"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,7 +24,7 @@
         <Button
             android:id="@+id/addBtn"
             android:layout_width="151dp"
-            android:layout_height="56dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="30dp"
             android:backgroundTint="#FFFFFF"
@@ -39,7 +41,7 @@
         <Button
             android:id="@+id/logOutBtn"
             android:layout_width="133dp"
-            android:layout_height="36dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:background="@drawable/rounded_button"
             android:text="Cerrar sesión"
@@ -50,7 +52,7 @@
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="320dp"
-        android:background="#2196F3"
+        android:background="#669BBC"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -80,6 +82,8 @@
         android:id="@+id/layout_objetos"
         android:layout_width="match_parent"
         android:layout_height="310dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -140,7 +144,7 @@
 
             <LinearLayout
                 android:id="@+id/prestamos"
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 

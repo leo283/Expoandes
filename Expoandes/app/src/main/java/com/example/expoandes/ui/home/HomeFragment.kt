@@ -14,6 +14,7 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isEmpty
+import androidx.core.view.marginStart
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.expoandes.InfoConfirmar
@@ -106,17 +107,21 @@ class HomeFragment : Fragment() {
 
                                 val color_texto=0xFF000000.toInt()
                                 cosa.setTextColor(color_texto)
-                                cosa.gravity = Gravity.CENTER_HORIZONTAL
+                                cosa.gravity = Gravity.CENTER
+                                cosa.setBackgroundResource(R.drawable.border)
 
 
 
                                 val espacio=Space(activity)
                                 espacio.minimumHeight=100
+                                val mini_espacio=Space(activity)
+                                mini_espacio.minimumHeight=12
 
 
                                 if (layout.isEmpty()){layout.addView(espacio)}
 
-                                    layout.addView(cosa)
+                                layout.addView(cosa)
+                                layout.addView(mini_espacio)
 
 
 
@@ -193,17 +198,21 @@ class HomeFragment : Fragment() {
 
                                                 val color_texto=0xFF000000.toInt()
                                                 cosa.setTextColor(color_texto)
-                                                cosa.gravity = Gravity.CENTER_HORIZONTAL
+                                                cosa.gravity = Gravity.CENTER
+                                                cosa.setBackgroundResource(R.drawable.border)
 
 
 
                                                 val espacio=Space(activity)
                                                 espacio.minimumHeight=100
+                                                val mini_espacio=Space(activity)
+                                                mini_espacio.minimumHeight=12
 
 
                                                 if (layout.isEmpty()){layout.addView(espacio)}
                                                 if(categoria==categoriaa) {
                                                     layout.addView(cosa)
+                                                    layout.addView(mini_espacio)
                                                 }
 
 

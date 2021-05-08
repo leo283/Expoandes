@@ -44,7 +44,7 @@ class CosasPropiasView : AppCompatActivity()  {
                     texto_nombre.textSize=16f
                     texto_nombre.gravity=Gravity.CENTER
                     var colorr=(0xFF000000).toInt()
-                    if (estado=="disponible"){colorr=(0xFF51E05D).toInt()}else if(estado=="no disponible"){colorr=(0xFFE13737).toInt()}
+                    if (estado=="disponible"){colorr=(0xFF418337).toInt()}else if(estado=="no disponible"){colorr=(0xFFdf1623).toInt()}
                     texto_nombre.setTextColor(colorr)
                     texto_nombre.setTextColor(colorr)
 
