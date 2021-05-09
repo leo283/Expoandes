@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/icono_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Expoandes.NoActionBar">
+        <activity android:name=".ContactActivity"/>
+        <activity android:name=".SignUpActivity"/>
         <activity android:name=".DevolverActivity"/>
         <activity android:name=".InfoConfirmar"/>
         <activity android:name=".PrestamosView"/>

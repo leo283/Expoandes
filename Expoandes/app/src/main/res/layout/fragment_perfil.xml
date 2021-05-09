@@ -9,10 +9,12 @@
 
     <LinearLayout
         android:id="@+id/botones"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
+        android:gravity="center_horizontal"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/layout_objetos"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,27 +27,13 @@
             android:id="@+id/addBtn"
             android:layout_width="151dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="30dp"
+            android:layout_gravity="center_horizontal"
             android:backgroundTint="#FFFFFF"
             android:drawableLeft="@mipmap/aniadir_simbolo"
             android:text="Agregar un objeto"
             android:textColor="@color/black"
             android:textSize="13sp" />
 
-        <Space
-            android:layout_width="30dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="20dp" />
-
-        <Button
-            android:id="@+id/logOutBtn"
-            android:layout_width="133dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:background="@drawable/rounded_button"
-            android:text="Cerrar sesión"
-            android:textSize="12sp" />
     </LinearLayout>
 
     <FrameLayout
@@ -56,6 +44,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/logOutBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+
+            android:background="@mipmap/exit" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -69,9 +67,20 @@
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="80dp"
             android:background="@drawable/not_so_rounded_button"
-            android:text="Esto es un texto"
+            android:text=" Esto es un texto "
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="130dp"
+            android:background="@drawable/not_so_rounded_button"
+            android:text=" Esto es un texto "
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
@@ -81,7 +90,7 @@
     <LinearLayout
         android:id="@+id/layout_objetos"
         android:layout_width="match_parent"
-        android:layout_height="310dp"
+        android:layout_height="0dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:orientation="vertical"
@@ -90,6 +99,10 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/botones">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
 
         <TextView
             android:id="@+id/textView"
@@ -112,7 +125,7 @@
 
             <TextView
                 android:id="@+id/textView2"
-                android:layout_width="200dp"
+                android:layout_width="190dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed-medium"
                 android:gravity="center"
@@ -122,7 +135,7 @@
 
             <TextView
                 android:id="@+id/textView4"
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed-medium"
                 android:gravity="center_horizontal"
@@ -138,7 +151,7 @@
 
             <LinearLayout
                 android:id="@+id/mis_cosas"
-                android:layout_width="200dp"
+                android:layout_width="190dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical" />
 

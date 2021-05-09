@@ -65,6 +65,7 @@ class PerfilFragment : Fragment() {
         val addBtn = root.findViewById<Button>(R.id.addBtn)
         val logoutBtn = root.findViewById<Button>(R.id.logOutBtn)
         val correo = root.findViewById<TextView>(R.id.correo)
+        val name=root.findViewById<TextView>(R.id.name)
 
 
         correo.text="  "+email.toString()+"  "
@@ -90,6 +91,20 @@ class PerfilFragment : Fragment() {
 
         val hola = db.collection("Mingle_users").document(email.toString()).collection("mis_prestamos").get()
 
+
+        val info_general = db.collection("Mingle_users").document(email.toString())
+        info_general.addSnapshotListener{snapshot,e->
+            if (e!=null){
+                Log.w(ContentValues.TAG,"Listen failed",e)
+            }
+            if (snapshot!=null&&snapshot.exists()){
+                val datos=snapshot.data
+
+                val nombre =datos!!["nombre"].toString()
+                name.text=" $nombre "
+
+            }
+        }
 
         data_prestamos.addSnapshotListener{snapshot, e ->
             if (e != null) {

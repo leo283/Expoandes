@@ -36,17 +36,7 @@ class   AuthActivity : AppCompatActivity() {
         val emailEditText = findViewById<EditText>(R.id.emailEditText)
         val passwordEditText = findViewById<EditText>(R.id.passwordEditText)
         signUpButton.setOnClickListener(){
-            if (emailEditText.text.isNotEmpty() && passwordEditText.text.isNotEmpty()){
-                FirebaseAuth.getInstance().createUserWithEmailAndPassword(emailEditText.text.toString(),
-                        passwordEditText.text.toString()).addOnCompleteListener(){
-                    if (it.isSuccessful){
-                        showHome(it.result?.user?.email?:"",ProviderType.BASIC)
-                    }
-                    else {
-                        showAlert()
-                    }
-                }
-            }
+            showSignUp()
         }
 
         loginButton.setOnClickListener(){
@@ -91,5 +81,10 @@ class   AuthActivity : AppCompatActivity() {
             autLayout.visibility= View.INVISIBLE
             showHome(email,ProviderType.valueOf(provider))
         }
+    }
+
+    fun showSignUp(){
+        val ir_a_registro=Intent(this,SignUpActivity::class.java)
+        startActivity(ir_a_registro)
     }
 }
