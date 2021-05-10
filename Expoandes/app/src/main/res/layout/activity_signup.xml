@@ -19,7 +19,8 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/roboto_medium"/>
 
     <TextView
         android:id="@+id/textView5"
@@ -31,7 +32,8 @@
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_bienvenida" />
+        app:layout_constraintTop_toBottomOf="@+id/text_bienvenida"
+        android:fontFamily="@font/roboto_medium"/>
 
     <EditText
         android:id="@+id/nameSignUp"
@@ -59,7 +61,8 @@
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameSignUp" />
+        app:layout_constraintTop_toBottomOf="@+id/nameSignUp"
+        android:fontFamily="@font/roboto_medium"/>
 
     <EditText
         android:id="@+id/phonenumber"
@@ -71,7 +74,8 @@
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailSignUp" />
+        app:layout_constraintTop_toBottomOf="@+id/emailSignUp"
+        android:fontFamily="@font/roboto_medium"/>
 
     <EditText
         android:id="@+id/passwordSignUp"
@@ -83,7 +87,8 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phonenumber" />
+        app:layout_constraintTop_toBottomOf="@+id/phonenumber"
+        android:fontFamily="@font/roboto_medium"/>
 
     <Button
         android:id="@+id/btnSignUp"
@@ -96,5 +101,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordSignUp"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:fontFamily="@font/roboto_medium"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

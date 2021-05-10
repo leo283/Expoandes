@@ -32,7 +32,8 @@
             android:drawableLeft="@mipmap/aniadir_simbolo"
             android:text="Agregar un objeto"
             android:textColor="@color/black"
-            android:textSize="13sp" />
+            android:textSize="13sp"
+            android:fontFamily="@font/roboto_medium"/>
 
     </LinearLayout>
 
@@ -71,7 +72,8 @@
             android:background="@drawable/not_so_rounded_button"
             android:text=" Esto es un texto "
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:fontFamily="@font/roboto_medium"/>
 
         <TextView
             android:id="@+id/name"
@@ -82,7 +84,8 @@
             android:background="@drawable/not_so_rounded_button"
             android:text=" Esto es un texto "
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:fontFamily="@font/roboto_medium"/>
 
 
     </FrameLayout>
@@ -108,7 +111,7 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-black"
+            android:fontFamily="@font/roboto_black"
             android:gravity="center"
             android:text="MIS OBJETOS"
             android:textColor="#000000"
@@ -127,7 +130,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-condensed-medium"
+                android:fontFamily="@font/roboto_bold"
                 android:gravity="center"
                 android:text="MIS COSAS"
                 android:textColor="#000000"
@@ -137,11 +140,12 @@
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-condensed-medium"
+                android:fontFamily="@font/roboto_bold"
                 android:gravity="center_horizontal"
                 android:text="PRESTAMOS"
                 android:textColor="#000000"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                />
         </LinearLayout>
 
         <LinearLayout

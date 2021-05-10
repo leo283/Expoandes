@@ -17,7 +17,8 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/roboto_medium"/>
 
     <TextView
         android:id="@+id/texto2"
@@ -30,7 +31,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/articulo_nombre" />
+        app:layout_constraintTop_toBottomOf="@+id/articulo_nombre"
+        android:fontFamily="@font/roboto_medium"/>
 
     <TextView
         android:id="@+id/texto3"
@@ -43,7 +45,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/articulo_precio" />
+        app:layout_constraintTop_toBottomOf="@+id/articulo_precio"
+        android:fontFamily="@font/roboto_medium"/>
 
     <EditText
         android:id="@+id/articulo_nombre"
@@ -112,7 +115,8 @@
             android:id="@+id/libro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Libros" />
+            android:text="Libros"
+            android:fontFamily="@font/roboto_medium"/>
 
         <Space
             android:layout_width="20dp"
@@ -123,7 +127,8 @@
             android:id="@+id/electronico"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Electrónicos" />
+            android:text="Electrónicos"
+            android:fontFamily="@font/roboto_medium"/>
 
         <Space
             android:layout_width="20dp"
@@ -135,7 +140,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Material escolar" />
+            android:text="Material escolar"
+            android:fontFamily="@font/roboto_medium"/>
     </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

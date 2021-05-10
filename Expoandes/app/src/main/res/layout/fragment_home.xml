@@ -10,7 +10,7 @@
     <RadioGroup
         android:id="@+id/btn_group_home"
         android:layout_width="wrap_content"
-        android:layout_height="20dp"
+        android:layout_height="30dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="674dp"
         android:gravity="center_horizontal"
@@ -22,44 +22,33 @@
 
         <RadioButton
             android:id="@+id/btn_todo"
-            android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:checked="true"
+            android:fontFamily="@font/roboto_medium"
             android:text="Todos" />
-
-        <Space
-            android:layout_width="20dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
 
         <RadioButton
             android:id="@+id/libros_home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
             android:text="Libros" />
-
-        <Space
-            android:layout_width="20dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
 
         <RadioButton
             android:id="@+id/electronico_home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
             android:text="Electrónicos" />
-
-        <Space
-            android:layout_width="20dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
 
         <RadioButton
             android:id="@+id/material_escolar_home"
-            android:layout_width="103dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/roboto_medium"
             android:text="Material escolar" />
 
     </RadioGroup>

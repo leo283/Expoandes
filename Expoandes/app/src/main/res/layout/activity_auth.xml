@@ -35,7 +35,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Correo (Uniandes)"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:fontFamily="@font/roboto_medium"/>
 
         <Space
             android:layout_width="match_parent"
@@ -47,7 +48,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Contraseña"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:fontFamily="@font/roboto_medium"/>
 
         <Space
             android:layout_width="match_parent"
@@ -63,7 +65,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Acceder" />
+                android:text="Acceder"
+                android:fontFamily="@font/roboto_medium"/>
 
         </LinearLayout>
 
@@ -76,7 +79,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Regístrate" />
+            android:text="Regístrate"
+            android:fontFamily="@font/roboto_medium"/>
 
     </LinearLayout>
 

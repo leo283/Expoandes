@@ -24,7 +24,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
             android:gravity="center_horizontal"
-            android:text="TextView" />
+            android:text="TextView"
+            android:fontFamily="@font/roboto_medium"/>
 
         <TextView
             android:id="@+id/text_owner"
@@ -33,7 +34,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="40dp"
             android:gravity="center_horizontal"
-            android:text="TextView" />
+            android:text="TextView"
+            android:fontFamily="@font/roboto_medium"/>
 
         <TextView
             android:id="@+id/txtDescripcion"
@@ -42,7 +44,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="40dp"
             android:gravity="center_horizontal"
-            android:text="TextView" />
+            android:text="TextView"
+            android:fontFamily="@font/roboto_medium"/>
 
         <TextView
             android:id="@+id/txtPrecio"
@@ -51,7 +54,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="40dp"
             android:gravity="center_horizontal"
-            android:text="TextView" />
+            android:text="TextView"
+            android:fontFamily="@font/roboto_medium"/>
 
         <Button
             android:id="@+id/DevolverBtn"
